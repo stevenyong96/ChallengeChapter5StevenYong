@@ -36,8 +36,15 @@ class MainActivity : AppCompatActivity() {
 
 
         //Inisialisasi
-        val namaUser = intent.getStringExtra("DATA_USER_NAME")
-        val modePermainan = intent.getStringExtra("MODE_PERMAINAN")
+        val bundle = intent.extras
+        var namaUser:String? = null
+        var modePermainan:String? = null
+//        val namaUser = intent.getStringExtra("DATA_USER_NAME")
+//        val modePermainan = intent.getStringExtra("MODE_PERMAINAN")
+//        val person = Player()
+//        Intent.putExtra("AN_OBJECT",person)
+        namaUser = bundle!!.getString("DATA_USER_NAME", "Coco")
+        modePermainan = bundle!!.getString("MODE_PERMAINAN", "CPU")
         var txtPemain = findViewById<TextView>(R.id.text_view_pemain1)
         var txtPemain2 = findViewById<TextView>(R.id.text_view_computer)
         var txtStatus = findViewById<TextView>(R.id.txt_status)
@@ -200,6 +207,7 @@ class MainActivity : AppCompatActivity() {
         }
         txtStatus.setVisibility(View.VISIBLE);
         txtStatus.setText("CPU Memilih ${pemain2.playerPickDesc}")
+        Toast.makeText(this,"CPU Memilih ${pemain2.playerPickDesc}",Toast.LENGTH_SHORT).show()
         Log.d(MainActivity::class.java.simpleName, "Computer Memilih : "+ tempPilihanComputer + " (" + pemain2.playerPick.toString() + ")")
         var statusSuit = battleSuit(pemain.playerPick,pemain2.playerPick,statusBattle,pemain,pemain2)
         Log.d(MainActivity::class.java.simpleName, "Hasil Pertandingan : "+ statusSuit)

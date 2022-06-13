@@ -46,29 +46,45 @@ class HalamanMenuActivity: AppCompatActivity() {
 
         etMenuVsCom.setOnClickListener {
             val intentToMain = Intent(this, MainActivity::class.java)
-            intentToMain.putExtra("DATA_USER_NAME", namaUser)
-            intentToMain.putExtra("MODE_PERMAINAN", "CPU")
+            //intentToMain.putExtra("DATA_USER_NAME", namaUser)
+            //intentToMain.putExtra("MODE_PERMAINAN", "CPU")
+            val bundle = Bundle()
+            bundle.putString("DATA_USER_NAME", namaUser)
+            bundle.putString("MODE_PERMAINAN", "CPU")
+            intentToMain.putExtras(bundle)
             startActivity(intentToMain)
         }
 
         ivVersusCom.setOnClickListener {
             val intentToMain = Intent(this, MainActivity::class.java)
-            intentToMain.putExtra("DATA_USER_NAME", namaUser)
-            intentToMain.putExtra("MODE_PERMAINAN", "CPU")
+//            intentToMain.putExtra("DATA_USER_NAME", namaUser)
+//            intentToMain.putExtra("MODE_PERMAINAN", "CPU")
+            val bundle = Bundle()
+            bundle.putString("DATA_USER_NAME", namaUser)
+            bundle.putString("MODE_PERMAINAN", "CPU")
+            intentToMain.putExtras(bundle)
             startActivity(intentToMain)
         }
 
         etMenuVsPemain.setOnClickListener {
             val intentToMain = Intent(this, MainActivity::class.java)
-            intentToMain.putExtra("DATA_USER_NAME", namaUser)
-            intentToMain.putExtra("MODE_PERMAINAN", "PLAYER")
+//            intentToMain.putExtra("DATA_USER_NAME", namaUser)
+//            intentToMain.putExtra("MODE_PERMAINAN", "PLAYER")
+            val bundle = Bundle()
+            bundle.putString("DATA_USER_NAME", namaUser)
+            bundle.putString("MODE_PERMAINAN", "PLAYER")
+            intentToMain.putExtras(bundle)
             startActivity(intentToMain)
         }
 
         ivVersusPemain.setOnClickListener {
             val intentToMain = Intent(this, MainActivity::class.java)
-            intentToMain.putExtra("DATA_USER_NAME", namaUser)
-            intentToMain.putExtra("MODE_PERMAINAN", "PLAYER")
+//            intentToMain.putExtra("DATA_USER_NAME", namaUser)
+//            intentToMain.putExtra("MODE_PERMAINAN", "PLAYER")
+            val bundle = Bundle()
+            bundle.putString("DATA_USER_NAME", namaUser)
+            bundle.putString("MODE_PERMAINAN", "PLAYER")
+            intentToMain.putExtras(bundle)
             startActivity(intentToMain)
         }
 
