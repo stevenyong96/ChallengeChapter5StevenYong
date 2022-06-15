@@ -33,10 +33,10 @@ class HalamanMenuActivity: AppCompatActivity() {
         etMenuVsCom = findViewById<TextView>(R.id.et_menu_vs_com)
         ivVersusCom = findViewById<ImageView>(R.id.imageView4)
 
-
-        etMenuVsPemain.setText("${namaUser} vs Pemain")
+        etMenuVsPemain.setText("${namaUser} vs Pemain") // bisa pake etMenuVsPemain.text = "$namaUser vs Pemain"
         etMenuVsCom.setText("${namaUser} vs CPU")
 
+        // bisa di ganti val
         var snackbar: Snackbar = Snackbar.make(layoutMenu, "Selamat Datang ${namaUser}", Snackbar.LENGTH_LONG)
         snackbar.setActionTextColor(Color.parseColor("#FF7900"))
         snackbar.setAction("Tutup", View.OnClickListener {
@@ -79,6 +79,8 @@ class HalamanMenuActivity: AppCompatActivity() {
 
         ivVersusPemain.setOnClickListener {
             val intentToMain = Intent(this, MainActivity::class.java)
+            // kalau codenya uda ga di pake, delete aja
+            // kalau mau balikin,history code tetep aja di git
 //            intentToMain.putExtra("DATA_USER_NAME", namaUser)
 //            intentToMain.putExtra("MODE_PERMAINAN", "PLAYER")
             val bundle = Bundle()
@@ -93,6 +95,7 @@ class HalamanMenuActivity: AppCompatActivity() {
     }
 
     override fun onBackPressed() {
+        // +1 buat penerapan back pressed buat exit
         if (pressedTime + 2000 > System.currentTimeMillis()) {
             super.onBackPressed()
             this@HalamanMenuActivity.finish()
