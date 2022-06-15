@@ -37,12 +37,15 @@ class MainActivity : AppCompatActivity() {
 
         //Inisialisasi
         val bundle = intent.extras
+        // ini bisa langsung di gabung dengan init
         var namaUser:String? = null
         var modePermainan:String? = null
 //        val namaUser = intent.getStringExtra("DATA_USER_NAME")
 //        val modePermainan = intent.getStringExtra("MODE_PERMAINAN")
 //        val person = Player()
 //        Intent.putExtra("AN_OBJECT",person)
+
+        // usahakain untuk hindari pemakaian !!, bisa pakai ?
         namaUser = bundle!!.getString("DATA_USER_NAME", "Coco")
         modePermainan = bundle!!.getString("MODE_PERMAINAN", "CPU")
         var txtPemain = findViewById<TextView>(R.id.text_view_pemain1)
@@ -381,7 +384,7 @@ class MainActivity : AppCompatActivity() {
     private fun battleSuit(playerPick : Int , computerPick : Int , statusBattle: TextView , pemain1: Player, pemain2:Player): String {
         var status= ""
         if(playerPick == 1) {
-            if(computerPick == 1) {
+            if(computerPick == 1) { // bisa pake when
                 status="DRAW"
                 resultBattle(0,status,statusBattle,pemain1,pemain2)
             }
